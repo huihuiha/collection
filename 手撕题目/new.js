@@ -1,6 +1,4 @@
 
-
-
 function Fn(name) {
     this.name = name
     this.age = 20
