@@ -5,19 +5,19 @@
 其他依赖：
 - dependcies：项目依赖
 - peerDependencies：同版本依赖
-- bundledDependencies：捆绑依赖
+- bundledDependencies：捆绑依赖，执行 npm pack
 - optionalDependencies：可选依赖
 
 `npm`依赖与开发依赖
 - http://nodejs.cn/learn/npm-dependencies-and-devdependencies
 
-## 二、package.lock.json
+## 二、package-lock.json
 目的是保证任意机器上执行`npm i`命令都会得到相同的`node_modules`安装依赖结果
-
+ 
 `package-lock.json`如果是自己的开发项目则建议上传到代码版本库
 如果给外部用的库，则不建议。因为不使用`package-lock.json`文件的情况下，就可以服用主项目用过的包
 
-package.json 与 package.lock.json 的关系：
+package.json 与 package-lock.json 的关系：
 - https://www.cnblogs.com/yalong/p/15013880.html
 - https://blog.csdn.net/qq_29722281/article/details/108550752
 
@@ -64,9 +64,17 @@ todo: 了解`npm depupe`命令
 3. 只能一次性安装项目中所有的依赖，无法安装单个依赖包
 4. `npm ci`不会改变`package.json`与`package-lock.json`文件内容
 
-
+## 九、使用建议
+- npm update 升级新的小版本
+- npm install <package-name>@version 升级大版本
+- 或者手动修改 package.json版本号，执行 npm i 升级
+- 验证新版本没问题后，提交新的 package.json 与 package-lock.json
+- 降级依赖包则 npm install <package-name>@version
+- 删除依赖包 npm uninstall <package-name> 或者手动修改 package.json
+- 任何团队成员提交 package.json 或者 package-lock.json文件，其他成员拉取并 npm install
+- 如果package.json文件出现冲突，建议把本地的package-lock.json删掉，引入新的package.json 与 package-lock.json，并 npm install
 ## 总结
-- 如果package.json的依赖版本与package.lock.json版本不一致的时候，就会更新package.lock.json的文件
-- 兼容的意思就是package.lock.json的版本 是否在 package.json版本规范的范围
+- 如果package.json的依赖版本与package-lock.json版本不一致的时候，就会更新package-lock.json的文件
+- 兼容的意思就是package-lock.json的版本 是否在 package.json版本规范的范围
     - ^ 表示大版本、小版本都可以更高
     - ~ 只能查缺补漏版本更高
