@@ -1,12 +1,22 @@
 # npm 与 yarn
 
-## 一、开发依赖
-开发依赖是仅用于开发的程序包，在生产环境中并不需要，如`npm i -D`
+## 一、依赖
+开发依赖`devDependencies`是仅用于开发的程序包，在生产环境中并不需要，如`npm i -D`
+其他依赖：
+- dependcies：项目依赖
+- peerDependencies：同版本依赖
+- bundledDependencies：捆绑依赖
+- optionalDependencies：可选依赖
 
 `npm`依赖与开发依赖
 - http://nodejs.cn/learn/npm-dependencies-and-devdependencies
 
 ## 二、package.lock.json
+目的是保证任意机器上执行`npm i`命令都会得到相同的`node_modules`安装依赖结果
+
+`package-lock.json`如果是自己的开发项目则建议上传到代码版本库
+如果给外部用的库，则不建议。因为不使用`package-lock.json`文件的情况下，就可以服用主项目用过的包
+
 package.json 与 package.lock.json 的关系：
 - https://www.cnblogs.com/yalong/p/15013880.html
 - https://blog.csdn.net/qq_29722281/article/details/108550752
@@ -48,6 +58,11 @@ package.json 与 package.lock.json 的关系：
 ## 七、npm depupe
 todo: 了解`npm depupe`命令
 
+## 八、npm ci
+1. `npm ci` 命令完全根据`package-lock.json`文件执行
+2. 安装过程会先删除项目中现有的`node_modules`，重新安装
+3. 只能一次性安装项目中所有的依赖，无法安装单个依赖包
+4. `npm ci`不会改变`package.json`与`package-lock.json`文件内容
 
 
 ## 总结
