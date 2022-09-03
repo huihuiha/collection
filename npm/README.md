@@ -26,6 +26,14 @@ package.json 与 package.lock.json 的关系：
 - https://www.hangge.com/blog/cache/detail_2844.html
 
 
+上面代码做了个测试，就是我的项目引入了`webpack-sources`，版本是`1.4.0`
+然后`webpack`也引入了`webpack-sources`，但版本是`~1.4.1`，这时候`npm i`安装依赖，会出现：
+- node_modules会出现 webpack-sourcse@1.4.0
+- webpack的node_modules会多出 webpack-sources@1.4.3
+
+否则的话，只会在`node_modules`中出现符合两者的版本，再`webpack`依赖中不会出现
+
+
 总结：
 - 如果package.json的依赖版本与package.lock.json版本不一致的时候，就会更新package.lock.json的文件
 - 兼容的意思就是package.lock.json的版本 是否在 package.json版本规范的范围

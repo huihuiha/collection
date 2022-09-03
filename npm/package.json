@@ -11,7 +11,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^4.0.7"
+    "webpack": "^4.0.7",
+    "webpack-sources": "1.4.0"
   },
   "dependencies": {
     "loadash": "^1.0.0"
