@@ -1,0 +1,62 @@
+
+.header-wrap {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100rpx;
+  background-color: beige;
+}
+
+.header-wrap .input {
+  width: 500rpx;
+  padding: 8rpx;
+  border: 1rpx solid #000;
+  border-radius: 5rpx;
+}
+
+.todo-list-wrap {
+  margin-top: 20rpx;
+  margin: 0 auto;
+  width: 100vw;
+  background-color: azure;
+}
+
+.todo-list-wrap .item-wrap {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-left: burlywood;
+  border-left-width: 15rpx;
+  padding-left: 10rpx;
+  border-left-style: solid;
+}
+
+.todo-list-wrap .item-wrap .btn {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50rpx;
+  width: 150rpx;
+  font-size: 30rpx;
+  color: #444;
+}
+

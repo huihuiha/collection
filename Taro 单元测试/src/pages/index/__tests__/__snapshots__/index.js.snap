@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index 首页 Index 首页样式发生变化的时候，做出提示 1`] = `
+<ForwardRef
+  className="index"
+>
+  <Header
+    addItem={[Function]}
+  />
+  <TodoList
+    handleDeleteItem={[Function]}
+    list={Array []}
+  />
+</ForwardRef>
+`;

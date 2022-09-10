@@ -1,0 +1,24 @@
+.todo-list-wrap {
+    margin-top: 20px;
+    margin: 0 auto;
+    width: 100vw;
+    background-color: azure;
+    .item-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: burlywood;
+        border-left-width: 15px;
+        padding-left: 10px;
+        border-left-style: solid;
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 150px;
+            font-size: 30px;
+            color: #444;
+        }
+    }
+}

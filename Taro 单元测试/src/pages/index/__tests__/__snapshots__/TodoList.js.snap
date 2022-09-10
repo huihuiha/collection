@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList 列表组件 TodoList 列表组件样式发生变化的时候，做出提示 1`] = `
+<ForwardRef
+  className="todo-list-wrap"
+>
+  <ForwardRef
+    className="count"
+  >
+    0
+  </ForwardRef>
+</ForwardRef>
+`;

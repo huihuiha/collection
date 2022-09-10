@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header 头部组件 Header 样式发生变化的时候，做出提醒 1`] = `
+<ForwardRef
+  className="header-wrap"
+>
+  <ForwardRef
+    className="input"
+    onInput={[Function]}
+    placeholder="请输入todo事件"
+    type="text"
+    value=""
+  />
+  <ForwardRef
+    className="btn add-btn"
+    onClick={[Function]}
+  >
+    添加
+  </ForwardRef>
+</ForwardRef>
+`;
