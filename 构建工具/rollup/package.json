@@ -1,0 +1,18 @@
+{
+  "name": "rollup-demo",
+  "version": "1.0.0",
+  "description": "更注重打包，以 `ESM` 标准为目标的构建工具，特性：",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c rollup.config.cjs"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "rollup": "^3.9.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-json": "^6.0.0"
+  }
+}
