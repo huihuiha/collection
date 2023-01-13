@@ -8,3 +8,52 @@
   - 推 .ts .vue 文件进行及时编译
   - 对 Sass/Less 需要预编译的模块进行编译
   - 和浏览器建立 Socket 连接，实现 HMR
+
+
+
+## 插件
+
+受限制的 `rollup`插件，一些钩子可能没有
+
+命名限制：rollup-plugin-xxx ：公用的插件，只支持 `vite`的插件：vite-plugin-xxx
+
+
+
+### 支持的钩子
+
+- 构建初期：options、buildStart
+- 每个模块：resolveld、load、transform
+- 服务关闭时：buildEnd、closeBundle
+- modulePased不会被调用：该钩子是 ast 解析
+
+
+
+### 独有钩子：
+
+- config
+- configResolved
+- configureServer
+- transformIndexHtml
+- handleHotUpdate
+
+
+
+### 执行时机enforce
+
+控制插件执行顺序
+
+- pre
+- normal
+- post
+
+
+
+### 条件
+
+- 没有使用 moduleParsed 钩子
+- 在打包钩子和输出钩子之间没有很强的耦合
+
+
+
+
+
