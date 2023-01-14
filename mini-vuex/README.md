@@ -2,7 +2,7 @@
 
 
 
-`Vuex`，全局状态管理模式库
+全局状态管理模式库
 
 
 
@@ -27,7 +27,29 @@
   - 接口暴露 store.getter = {}
   - 属性动态定义
 
->  Object.keys(options.keys).forEach(key => {Objct.defineProperty(store.getters, key, {get: {options.getters[key].call(store, store.state)}})})
+```js
+Object.keys(options.getters).forEach((key) => {
+  // 定义计算属性
+  const result = computed(() => {
+    // 值来自用户定义的getter函数返回值
+    // 动态定义的store.getters.xxx
+    const getter = options.getters[key];
+    if (getter) {
+      return getter.call(store, store.state);
+    } else {
+      console.error(`unknown getter type ${key}`);
+      return '';
+    }
+  });
+
+  Object.defineProperty(store.getters, key, {
+    // 只读
+    get() {
+      return result;
+    },
+  });
+});
+```
 
 - 严格模式：watch(state._commit)，封装commit函数
 
