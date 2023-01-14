@@ -1,8 +1,6 @@
 import { reactive, toRefs, computed, getCurrentInstance, inject } from 'vue';
 import { piniaSysbol } from './createPinia';
 
-const stores = new Map();
-
 export function defineStore(id, options) {
   const { state: stateFn, actions, getters } = options;
   const state = reactive(stateFn());
