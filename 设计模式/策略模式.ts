@@ -44,3 +44,19 @@ class VipUser implements IUser {
 }
 
 const user2 = new OrdinaryUser();
+
+const strategies = {
+  S: function (salary: number) {
+    return salary * 4;
+  },
+  A: function (salary: number) {
+    return salary * 3;
+  },
+  B: function (salary: number) {
+    return salary * 2;
+  },
+};
+
+const calculatiBouns = function (level: 'S' | 'A' | 'B', salary: number) {
+  return strategies[level](salary);
+};
