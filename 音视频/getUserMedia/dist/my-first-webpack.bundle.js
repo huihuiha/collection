@@ -1,0 +1,1 @@
+(()=>{const e=document.getElementById("btn"),t=document.getElementById("video");e.addEventListener("click",(function(){navigator.mediaDevices.getUserMedia({video:!0,audio:!0}).then((e=>{console.log(e),t.srcObject=e})).catch((e=>{console.log(e)}))}))})();
